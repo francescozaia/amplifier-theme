@@ -1,0 +1,16 @@
+// theme values
+window.theme = window.theme || {};
+
+var ajaxCartMethod = {{ settings.ajax_cart_method | json }};
+var addToCart = {{ 'products.product.add_to_cart' | t | json }};
+var soldOut = {{ 'products.product.sold_out' | t | json }};
+var compareAt = {{ 'products.product.compare_at' | t | json }};
+var unavailable = {{ 'products.product.unavailable' | t | json }}
+
+theme.liquid = {
+    ajaxCartMethod: ajaxCartMethod,
+    addToCart: addToCart,
+    soldOut: soldOut,
+    compareAt: compareAt,
+    unavailable: unavailable
+}

@@ -50,8 +50,7 @@
   Add the page template as a class for easy page or template specific styling.
 {% endcomment %}
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
-YO FROM GRUNT!
-    <div id="NavDrawer" class="drawer drawer--left">
+ Yooo <div id="NavDrawer" class="drawer drawer--left">
     <div class="drawer__header">
       <div class="drawer__title h3">{{ 'layout.drawers.browse' | t }}</div>
       <div class="drawer__close js-drawer-close">
@@ -383,8 +382,8 @@ YO FROM GRUNT!
                 {% endfor %}
               </ul>
             {% endunless %}
-            <a href="http://shopify.com/amplifier">Amplifier Theme Framework</a> by <a href="http://www.shopify.com?ref=Amplifier" title="Shopify.com">Shopify</a><br>
-            <small>{{ powered_by_link }}</small>
+              <a href="http://shopify.com/amplifier">Amplifier Theme Framework</a> by <a href="http://www.shopify.com?ref=Amplifier" title="Shopify.com">Shopify</a><br>
+              <small>{{ powered_by_link }}</small>
           </div>
         </div>
       </div>
@@ -393,7 +392,11 @@ YO FROM GRUNT!
   </div>
 
   {{ 'fastclick.min.js' | asset_url | script_tag }}
-  {{ 'amplifier.js' | asset_url | script_tag }}
+  {{ 'shopify.money-format.js' | asset_url | script_tag }}
+  {{ 'theme.test.js' | asset_url | script_tag }}
+  {{ 'theme.libs.js' | asset_url | script_tag }}
+  {{ 'theme.drawers.js' | asset_url | script_tag }}
+  {{ 'theme.main.js' | asset_url | script_tag }}
 
   {% comment %}
     Template-specific js
@@ -401,7 +404,7 @@ YO FROM GRUNT!
   <script>
     {% if resetPassword %}
       $(function() {
-        amplifier.resetPasswordSuccess();
+        theme.resetPasswordSuccess();
       });
     {% endif %}
   </script>
@@ -409,7 +412,7 @@ YO FROM GRUNT!
   {% comment %}
     Ajaxify your cart with this plugin.
     Documentation:
-      - http://shopify.com/amplifier#ajax-cart
+      - https://shopify.github.io/Timber/#ajax-cart
   {% endcomment %}
   {% if settings.ajax_cart_method == "drawer" %}
     {{ 'handlebars.min.js' | asset_url | script_tag }}
@@ -429,7 +432,7 @@ YO FROM GRUNT!
 
       jQuery(document.body).on('afterCartLoad.ajaxCart', function(evt, cart) {
         // Bind to 'afterCartLoad.ajaxCart' to run any javascript after the cart has loaded in the DOM
-        amplifier.RightDrawer.open();
+        theme.RightDrawer.open();
       });
     </script>
   {% endif %}
