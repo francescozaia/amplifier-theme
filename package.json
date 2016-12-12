@@ -1,0 +1,15 @@
+{
+  "name": "amplifier-whole",
+  "version": "1.0.0",
+  "description": "theme upload -e=development assets/amplifier.scss.liquid theme open --env=development",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt-shopify": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
